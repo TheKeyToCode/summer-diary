@@ -12,7 +12,7 @@ function App() {
                 // console.log(el.img.path)
                 el.img.path=correctURL(el.img.path);
                 // console.log("ERR:",el.img.path)
-
+//sfgsdgsfgdfgdf
                 return el
             })
             console.log(cards)
