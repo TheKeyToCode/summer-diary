@@ -7,11 +7,10 @@ import HomePage from './components/HomePage.jsx'
 import PostPage from './components/PostPage.jsx'
 import { getCollection } from './services/api';
 import { correctURL } from './services/img';
-import Foot from './components/Foot.jsx'
 import SashaPage from './components/SashaPage.jsx';
 import SlavaPage from './components/SlavaPage.jsx';
-
-
+import KirillPage from './components/KirillPage.jsx';
+import AlekseyPage from './components/AlekseyPage.jsx';
 function App() {
     
     return (
@@ -21,13 +20,12 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/post/:slug" element={<PostPage />} />
                     <Route path="*" element={<NotFoundPage />} />
-                    <Route path="/shulk" element={<SashaPage />}/>
+                    <Route path="/sasha" element={<SashaPage />}/>
                     <Route path="/slava" element={<SlavaPage />}/>
+                    <Route path="/kirill" element={<KirillPage />}/>
+                    <Route path="/alexei" element={<AlekseyPage />}/>
                 </Routes>
-            </BrowserRouter>
-
-           
-            
+            </BrowserRouter>            
         </>
     )
 }
