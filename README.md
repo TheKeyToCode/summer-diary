@@ -1,12 +1,36 @@
-# React + Vite
+# Мастерская №7 Летний дневник
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Летний дневник** - это пазл программирования, где каждый модуль - это кусочек головоломки, 
+и только собрав их вместе, можно увидеть полную картину успеха!
 
-Currently, two official plugins are available:
+Иннетнет-дневник, в 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+--Ссылки на итоговый проект--
 
-## Expanding the ESLint configuration
+# Требования
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* HTML 5
+* Tailwind css
+* Вебсервер Vite
+
+# Установка
+
+* Извлеките архив в папку на ваш веб-сервер
+* Откройте в браузере --Ссылка--
+
+Добавление постов производится через формы --Формы-- и
+--Админ-панель--, используя пароль указанный в config.txt.
+После добавления поста, загрузите его фотографию в /public/images/.
+
+# Состав мастерской
+## Ученики
+* Байков Александр Иванович
+* Комаров Святослав Михайлович,
+* Курский Кирилл Евгеньевич,
+* Фомин Андрей,
+* Рау Алексей Алексеевич,
+* Ключников Даниил Алексеевич.
+
+
+## Руководитель
+* Зубарев Алексей Юрьевич

@@ -1,31 +1,92 @@
 import React from 'react';
+import { FaVk, FaTelegram } from "react-icons/fa6";
+import { getLayoutInfo } from '../services/api.js';
+import { useState, useEffect } from 'react';
+import { correctURL } from '../services/img.js'
 
 export default function Foot() {
-    return (
-        <footer className="bg-[#021446] px-8 py-4">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div>ЛШЮП 2025</div>
-                <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-                    <a href="https://ssyp.ru/policy" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">Политика конфиденциальности</a>
-                    <a href="https://ssyp.ru/ssyp2024" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2024</a>
-                    <a href="https://ssyp.ru/ssyp2023" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2023</a>
-                    <a href="https://ssyp.ru/ssyp2022" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2022</a>
-                    <a href="https://ssyp.ru/ssyp2021" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2021</a>
-                    <a href="https://ssyp.ru/ssyp2020" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2020</a>
-                    <a href="https://ssyp.ru/ssyp2019" className="text-[#4fc3f7] mx-2.5 font-bold hover:underline">ЛШЮП 2019</a>
-                </div>
+    const [footerInfo, setFooterInfo] = useState({});
+    
+    useEffect(() => {
+        getLayoutInfo().then((r) => {
+            setFooterInfo(r)
+        });
+    }, [])
 
-                <div className="flex gap-4">
-                    <a href="https://vk.com/lshup" target="_blank">
-                        <div>vk</div>
-                    </a>
-                    <a href="https://t.me/lshup" target="_blank">
-                        <div>tg</div>
-                    </a>
+
+    if (footerInfo.title === undefined) {
+        return (<></>)
+    }
+    return (
+        <footer className="bg-secondary text-on-secondary">
+            <div className="container mx-auto px-5 py-10">
+                <div className="md:flex -m-5">
+                    <div className='w-full md:w-1/3 p-5'>
+                        <div className="flex items-center">
+                            <img src={correctURL(footerInfo.logo.path)} className="w-[48px]" alt="logo" />
+                            <div className='pl-3 font-bold text-2xl'>ЛШЮП</div>
+                        </div>
+                        <div className='mt-3 text-sm'>
+                            <div className='font-medium pt-2 text-md'>Сделано уениками 7 мастерской в 2025 году</div>
+                        </div>
+                    </div>
+
+                    <div className="w-full md:w-1/3 p-5">
+                        <div className='font-bold text-3xl pb-5'>История</div>
+                        {footerInfo.information_links.map(year => {
+
+                            return (
+                                <div key={year._id} className='pb-3'>
+                                    <a href={year.url} target='_blank' className="text-on-secondary hover:underline">
+                                        {year.lable}
+                                    </a>
+                                </div>
+                            );
+                        })}
+
+                    </div>
+
+                    <div className="w-full md:w-1/3 p-5">
+                        <div className='font-bold text-3xl pb-3'>Контактная информация</div>
+                        <div>
+                            {footerInfo.history_links.map(info => (
+                                <div key={info._id} className='pb-3'>
+                                    <a href={info.url} target='_blank' className="text-on-secondary pb-2 hover:underline">{info.lable}</a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </footer >
+
+            <div className="bg-primary">
+                <div className="container mx-auto px-5 py-7 flex flex-col sm:flex-row justify-between items-center sm:justify-between">
+                    <div className="w-full sm:w-1/3 text-center sm:text-left mb-2 sm:mb-0">
+                        © {new Date().getFullYear()} {footerInfo.copyright}
+                    </div>
+                    <div className="w-full sm:w-1/3 text-center mb-2 sm:mb-0">
+                        {footerInfo.city}
+                    </div>
+                    <div className="w-full sm:w-1/3 flex justify-center sm:justify-end space-x-4">
+                        <a
+                            href={"https://vk.com/" + footerInfo.vk}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="VK"
+                        >
+                            <FaVk className="text-xl text-on-secondary hover:text-white transition" />
+                        </a>
+                        <a
+                            href={"https://t.me/" + footerInfo.telegram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Telegram"
+                        >
+                            <FaTelegram className="text-xl text-on-secondary hover:text-white transition" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 }

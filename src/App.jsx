@@ -1,32 +1,34 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import ReactMarkdown from 'react-markdown';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFoundPage from './components/NotFoundPage.jsx'
 import HomePage from './components/HomePage.jsx'
-import PostPage from './components/PostPage.jsx'
-import { getCollection } from './services/api';
-import { correctURL } from './services/img';
-import SashaPage from './components/SashaPage.jsx';
-import SlavaPage from './components/SlavaPage.jsx';
-import KirillPage from './components/KirillPage.jsx';
-import AlekseyPage from './components/AlekseyPage.jsx';
+import Head from './components/Head.jsx'
+import Foot from './components/Foot.jsx'
+import PostPage from './components/PostPage.jsx';   
+// import TestPage from "./components/TestPage.jsx";
+import Hero from "./components/Hero.jsx"
+import { ErrorBoundary } from 'react-error-boundary'
+import MainThing from './components/MainThing.jsx'
+//const isDarkTheme = useTheme().palette.type === 'dark';
+////////////////////////////////////////////////////////////////////
 function App() {
-    
     return (
-        <>
+        <ErrorBoundary>
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/post/:slug" element={<PostPage />} />
-                    <Route path="*" element={<NotFoundPage />} />
-                    <Route path="/sasha" element={<SashaPage />}/>
-                    <Route path="/slava" element={<SlavaPage />}/>
-                    <Route path="/kirill" element={<KirillPage />}/>
-                    <Route path="/alexei" element={<AlekseyPage />}/>
-                </Routes>
-            </BrowserRouter>            
-        </>
+                <div className='min-h-[90vh]'>
+                    <Routes>
+                        
+                            <Route path="/" element={<ErrorBoundary><Head /><HomePage /><Foot /></ErrorBoundary>} />
+                            <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
+                            {/* <Route path="/testPage" element={<ErrorBoundary><Head /><TestPage /><Foot /></ErrorBoundary>} /> */}
+                            {/* <Route path="/hero" element={<ErrorBoundary><Head /><Hero /><Foot /></ErrorBoundary>} /> */}
+                            <Route path="mainthing" element={<ErrorBoundary><Head /><MainThing /><Foot /></ErrorBoundary>} />
+                            <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
+                        
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </ErrorBoundary>
     )
 }
 

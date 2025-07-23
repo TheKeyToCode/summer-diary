@@ -1,0 +1,119 @@
+import { getCollectionByName, getCardByNameAndSlug, getPosts } from "../services/api";
+import { useEffect, useState } from 'react'
+import PostCard from "./PostCard";
+
+
+
+export default function MainThing() {
+    // let currentPage = 1;
+    const [currentPage, setCurrentPage] = useState(1);
+    const [posts, setPosts] = useState([]); 
+
+    function morePages() {
+        // useEffect(() => {
+        setCurrentPage(currentPage + 1)
+        getPosts(currentPage+1).then((r) => {
+            console.log("r:", posts)
+            const r1 = [...posts]
+            console.log("r1:", r1)
+            r1.push(...r.entries)
+            // setPosts(r)
+            // console.log(r)
+            // setPosts(
+            // const res = (<div> {
+            //     r.entries.map((el) => {
+            //         return (
+            //             <PostCard article={el}></PostCard>
+            //         )
+            //     })
+            // } </div>)
+            // console.log(res)
+            // console.log((<div> {
+            //     r.entries.map((el) => {
+            //         // console.log((<PostCard article={el}></PostCard>))
+            //         return (
+            //             <PostCard article={el}></PostCard>
+            //         )
+            //     })
+            // } </div>))
+
+            setPosts(r1)
+            // )
+        })
+        return 0;
+        // }, [])
+    }
+    console.log(morePages)
+
+    useEffect(() => {
+        getPosts(1).then((r) => {
+
+            // setPosts(r)
+            // console.log(r)
+            // setPosts(
+            // const res = (<div> {
+            //     r.entries.map((el) => {
+            //         return (
+            //             <PostCard article={el}></PostCard>
+            //         )
+            //     })
+            // } </div>)
+            // console.log(res)
+            // console.log((<div> {
+            //     r.entries.map((el) => {
+            //         // console.log((<PostCard article={el}></PostCard>))
+            //         return (
+            //             <PostCard article={el}></PostCard>
+            //         )
+            //     })
+            // } </div>))
+            setPosts(r.entries)
+            // )
+        })
+    }, [])
+    // const extra=3;
+    // let delta=0;
+    // const [Posts, getPosts]= useState(undefined)
+    // useEffect(()=>{
+    //     getPosts(1).then((r)=>{
+    //         delta+=extra;   
+    //         getPosts(r)  
+    //         console.log(r)  
+    //     })
+    // })
+
+    // if(Posts===undefined){
+    //     return (<></>)
+    // }
+
+    // const myHtml = (
+    //     <div>
+    //         <h1>Заголовок</h1>
+    //         <p>Абзац текста.</p>
+    //     </div>
+    // );
+    // console.log()\
+    if (posts == []) {
+        return (<></>)
+    }
+    return (
+        <div>
+            <div className="">
+                {
+                posts?.map(el => (
+                    // <React.Fragment key={el.id}>
+                    <PostCard key={el.slug} element={el} />
+                    // </React.Fragment>
+                ))}
+            </div>
+
+            <div>
+                {"sm"}
+            </div>
+
+            {/* <button> */}
+            <button type="button" onClick={morePages} class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Больше статей</button>
+
+        </div>
+    )
+}
