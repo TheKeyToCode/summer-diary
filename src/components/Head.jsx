@@ -26,10 +26,29 @@ export default function Head() {
                     </div>
                 </Link>
                 <span className="flex">
-                    <span className="mx-4 sm:block font-medium"><a className="flex items-center" href={"tel:" + headerInfo.phone} target="_blank"><FaPhone size={22} className="mr-2" /> <div className="hidden lg:block font-medium">{headerInfo.phone}</div></a></span>
-                    <span className="mx-4 sm:block font-medium"><a href={"https://t.me/" + headerInfo.telegram} target="_blank"><FaTelegram size={24} /></a></span>
-                    <span className="mx-4 sm:block font-medium"><a href={"https://vk.com/" + headerInfo.vk} target="_blank"><FaVk size={24} /></a></span>
-                    <span className="ml-4 my-auto"><a className="font-medium bg-primary border-[2px] px-3 py-2 rounded-xl cursor-pointer translation delay-150 duration-300 ease-in-out hover:shadow-lg" href={headerInfo.button.url} target="_blank">{headerInfo.button.lable}</a></span>
+                    <span className="mx-4 sm:block font-medium">
+                        <a className="flex items-center" 
+                            href={"tel:" + headerInfo.phone} 
+                            target="_blank"><FaPhone size={22} 
+                            className="mr-2" /> 
+                                <div className="hidden lg:block font-medium">{headerInfo.phone}</div>
+                        </a>
+                    </span>
+                    <span className="mx-4 sm:block font-medium">
+                        <a href={"https://t.me/" + headerInfo.telegram} 
+                           target="_blank"><FaTelegram size={24} />
+                        </a>
+                    </span>
+                    <span className="mx-4 sm:block font-medium">
+                        <a href={"https://vk.com/" + headerInfo.vk} 
+                           target="_blank"><FaVk size={24} />
+                        </a>
+                    </span>
+                    <span className="ml-4 my-auto">
+                        <a className="font-medium bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary border-[2px] px-4 py-3 rounded-xl cursor-pointer translation delay-150 duration-150 ease-in-out hover:shadow-lg w-30" 
+                           href={headerInfo.button.url} 
+                           target="_blank">{headerInfo.button.lable}</a>
+                    </span>
 
                 </span>
             </div>

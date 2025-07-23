@@ -1,20 +1,31 @@
-export default async function getPostBuSlug(slug) {
-    const response = await fetch(apiDomain + `api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, { //Потом надо сделать чтоб по имени коллекции работало
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
+import { Link, useParams } from 'react-router-dom';
+import { getPostBySlug } from '../services/api.js';
+import ReactMarkdown from 'react-markdown';
+import { useState, useEffect } from 'react';
 
-        body: JSON.stringify({
-            filter: { slug },
-            // fields: { fieldA: 1, fieldB: 1 },
-            // limit:1,
-            // skip,
-            // sort: { _created: -1 },
-            // populate , // resolve linked collection items
+export default function Post() {
+    const[postInfo, setPostInfo] = useState({})
+    const { slug } = useParams();
+    
+    useEffect(() => {
+        getPostBySlug(slug).then((r) => {
+            setPostInfo(r)
+        });
+    }, [slug])
 
-            // lang: 'de' // return normalized language fields (fieldA_de => fieldA)
+    if (postInfo.entries === undefined) {
+        return (<></>)
+    }
+
+    return (
+        postInfo.entries.map((el) => {
+            return (
+                <div key={el._id} className='post px-5 py-10 container mx-auto'>
+                    <div className="max-w-[900px]">
+                        <ReactMarkdown children={el.markdown_text} />
+                    </div>
+                </div>
+            )
         })
-    });
-    const json = response.json();
-    console.log(json)
-    return json;
+    )
 }

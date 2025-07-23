@@ -1,99 +1,36 @@
 const apiDomain = 'http://api.diary.ssypmarket.ru/';
-const token = '?token=7123bc63c91be681bf4a2528e6d800';
-const fetchCash = {}
 
-export async function getFetch(address, filter, method) {
-    return await fetch(firstPart + secPart)
+const getFetch = async function(address, filterList=null) {
+    const response = (await fetch(apiDomain + address, {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(filterList)}))
+    return response.json()
 }
 
 export async function getLayoutInfo() {
-    let link = apiDomain + "api/singletons/get/layout?token=7123bc63c91be681bf4a2528e6d800&populate=2";
-    if (!(link in fetchCash)) {
-        const json = await fetch(link);
-        fetchCash[link] = json.json();
-    }
-    return fetchCash[link]
+    return getFetch("api/singletons/get/layout?token=7123bc63c91be681bf4a2528e6d800&populate=2")
+}
+
+export async function getMainInfo() {
+    return getFetch("api/singletons/get/main_page?token=7123bc63c91be681bf4a2528e6d800&populate=2")
 }
 
 export async function getCollectionByName({ name, limit = 1, skip = 0, filter = {}, populate = 1 }) {
-    const response = getFetch(apiDomain, `api/collections/get/${name}`, { //Потом надо сделать чтоб по имени коллекции работало
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({filter, limit,
-            skip,
-            populate, 
-        })
-    });
-    const json = response.json();
-    return json;
+    return getFetch(`api/collections/get/${name}?token=2a273b4e92433fbf9abc18c1a49347`, {filter, limit, skip, populate})
 }
+
 export async function getCardByNameAndSlug(slug, { populate = 1 }) {
-    const response = getFetch(apiDomain + `api/collections/get/${name}?token=2a273b4e92433fbf9abc18c1a49347`, { //Потом надо сделать чтоб по имени коллекции работало
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-            filter: { slug },
-            // fields: { fieldA: 1, fieldB: 1 },
-            limit: 1,
-            // skip,
-            // sort: { _created: -1 },
-            populate, // resolve linked collection items
-
-            // lang: 'de' // return normalized language fields (fieldA_de => fieldA)
-        })
-    });
-    const json = response.json();
-    // console.log(json)
-    return json[0];
+    return getFetch(`api/collections/get/${name}?token=2a273b4e92433fbf9abc18c1a49347`, {filter: { slug }, limit: 1, populate})[0]
 }
 
-export default async function getPostBySlug(slug) {
-    const response = await fetch(apiDomain + `api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, { //Потом надо сделать чтоб по имени коллекции работало
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-            filter: { slug, published:true},
-            // fields: { fieldA: 1, fieldB: 1 },
-             limit: slug,
-            // skip,
-            // sort: { _created: -1 },
-            // populate , // resolve linked collection items
-
-            // lang: 'de' // return normalized language fields (fieldA_de => fieldA)
-        })
-    });
-    const json = response.json();
-    // console.log(json)
-    return json;
+export async function getPostBySlug(slug) {
+    return getFetch(`api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, {filter: { slug, published:true}, limit: slug})
 }
-// let currentCount=0
+
 export async function getPosts(page = 1) {
-    // console.log("I WANT FOUND AN "+page)
     const extra = 3 //Количество статей за каждую "страницу"
-    const response = await fetch(apiDomain + `api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, { //Потом надо сделать чтоб по имени коллекции работало
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-
-        body: JSON.stringify({
-            filter: { published: true },
-            sort: { date: -1 },
-
-            // fields: { fieldA: 1, fieldB: 1 },
-            limit:extra,
-            skip:(page-1)*extra,
-            // sort: { _created: -1 },
-            // populate , // resolve linked collection items
-
-            // lang: 'de' // return normalized language fields (fieldA_de => fieldA)
-        })
-    });
-    const json = response.json();
-    // console.log(json)
-    return json;
-
+    return getFetch(`api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, {filter: { published: true }, sort: { date: -1 }, limit:extra, skip:(page-1)*extra})
 }
 
 
