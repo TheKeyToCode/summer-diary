@@ -10,7 +10,7 @@ const getFetch = async function(address, filterList=null) {
 }
 
 export async function getLayoutInfo() {
-    return getFetch(`api/singletons/get/layout`, {populate : 2})
+    return getFetch(`api/singletons/get/layout`, {populate : 2})    
 }
 
 export async function getMainInfo() {
@@ -35,10 +35,11 @@ export async function getCardByNameAndSlug(slug, { populate = 1 }) {
 }
 
 export async function getPostBySlug(slug) {
+    console.log(getFetch(`api/collections/get/posts`, {filter: { slug, published:true}, limit: slug}))
     return getFetch(`api/collections/get/posts`, {filter: { slug, published:true}, limit: slug})
 }
 
 export async function getPosts(page = 1) {
-    const extra = 3 //Количество статей за каждую "страницу"
-    return getFetch(`api/collections/get/posts`, {filter: { published: true }, sort: { date: -1 }, limit:extra, skip:(page-1)*extra})
+    console.log(getFetch(`api/collections/get/posts`, {filter: { published: true }, sort: { date: -1 }, limit:3, skip:(page-1)*3}))
+    return getFetch(`api/collections/get/posts`, {filter: { published: true }, sort: { date: -1 }, limit:3, skip:(page-1)*3})
 }

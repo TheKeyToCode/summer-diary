@@ -20,8 +20,8 @@ export default function Post() {
     return (
         postInfo.entries.map((el) => {
             return (
-                <div key={el._id} className='post px-5 py-10 container mx-auto'>
-                    <div className="max-w-[900px]">
+                <div key={el._id} className='post px-5 py-10 container mx-auto bg-background text-on-background'>
+                    <div className="max-w-[900px] bg-background text-on-background">
                         <ReactMarkdown children={el.markdown_text} />
                     </div>
                 </div>

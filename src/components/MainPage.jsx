@@ -1,4 +1,4 @@
-import { getSingetonInfo } from '../services/api.js'
+import { getMainInfo } from '../services/api.js'
 import { useState, useEffect } from 'react'
 import { correctURL } from '../services/img.js'
 
@@ -7,8 +7,9 @@ export default function Hero() {
     const [mainInfo, setMainInfo] = useState({});
     
     useEffect(() => {
-        getSingetonInfo('main_page').then((r) => {
+        getMainInfo().then((r) => {
             setMainInfo(r)
+            console.log(r)
         });
     }, [])
     if (mainInfo.title === undefined) {
@@ -17,11 +18,11 @@ export default function Hero() {
 
   return (
     <div
-      className="py-16 text-on-background  "
+      className="py-16 text-on-background bg-background "
     >
       <div className="container mx-auto px-5 flex flex-col md:flex-row items-center justify-between">
         <div className="max-w-xl mb-10 md:mb-0">
-          <h1 className="text-2xl md:text-4xl md:text-5xl font-bold leading-tight mb-4 text-primary">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-primary">
             {mainInfo.title}
           </h1>
           <p className="mb-6 text-lg text-on-surface">

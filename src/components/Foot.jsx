@@ -27,7 +27,7 @@ export default function Foot() {
                             <div className='pl-3 font-bold text-2xl'>ЛШЮП</div>
                         </div>
                         <div className='mt-3 text-sm'>
-                            <div className='font-medium pt-2 text-md'>Сделано уениками 7 мастерской в 2025 году</div>
+                            <div className='font-medium pt-2 text-md'>Сделано учениками седьмой мастерской в 2025 году</div>
                         </div>
                     </div>
 

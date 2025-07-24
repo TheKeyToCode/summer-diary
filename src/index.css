@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+ul {
+    list-style: disc;
+   }
+
 .post h1 {
   @apply text-4xl font-extrabold pb-8 text-primary leading-12;
 }
@@ -111,7 +115,7 @@
   --on-error-color: #690005;
   --error-container-color: #93000a;
   --on-error-container-color: #ffdad6;
-  --background-color: #111111;
+  --background-color: #2e2e2e;
   --on-background-color: #dae2f9;
   --surface-color: #111318;
   --on-surface-color: #e2e2e9;

@@ -36,10 +36,10 @@ export default function Event() {
         return (<></>)
 
     return (<>
-        <div className="text-center text-2xl md:text-5xl pt-15">{eventInfo.title}</div>
-        <div className="text-center text-thin text-lg md:text-2xl pt-13">{eventInfo.subtitle}</div>
-
-        <div className="container flex flex-wrap mx-auto px-5">
+        <div className="text-center text-2xl md:text-5xl pt-15 bg-background text-on-background">{eventInfo.title}</div>
+        <div className="text-center text-thin text-lg md:text-2xl pt-13 bg-background text-on-background">{eventInfo.subtitle}</div>
+        <div className=" bg-background text-on-background">
+        <div className="container flex flex-wrap mx-auto px-5 bg-background">
             {eventColInfo.entries.map((el) => {
                 return (
                     <div key={el._key} className="container mx-auto px-5">
@@ -47,6 +47,7 @@ export default function Event() {
                     </div>
                 )
             })}
+        </div>
         </div>
     </>)
 }
