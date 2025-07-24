@@ -33,7 +33,7 @@ export default function PostList() {
         return (<></>)
     }
     return (
-        <div className="dark:m-100 container mx-auto px-5 py-10 ">
+        <div className="container mx-auto px-5 py-10 ">
             <div className="flex-wrap -m-5 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 content-center">
                 {
                     posts?.map(el => (

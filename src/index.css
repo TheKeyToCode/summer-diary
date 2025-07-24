@@ -4,10 +4,10 @@
   @apply text-4xl font-extrabold pb-8 text-primary leading-12;
 }
 .post h2 {
-  @apply text-2xl font-bold pb-6 pt-3;
+  @apply text-2xl font-bold pb-6 pt-3 text-on-background;
 }
 .post img {
-  @apply  mb-10;
+  @apply  mb-10 text-on-background;
   width: 100%;
   border: var(--primary-color) solid 4px;
   border-radius: 15px;
@@ -17,7 +17,7 @@
   @apply mb-10
 }
 .post h3 {
-  @apply text-xl font-bold pb-6 pt-3;
+  @apply text-xl font-bold pb-6 pt-3 text-on-background;
 }
 .post blockquote {
   @apply mb-10 pl-9 text-primary;
@@ -37,8 +37,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-:root {
-  /* Light theme RGB values */
+
+@media (prefers-color-scheme: light) {
+    body {
+        
+      
   --primary-color: #005BBF;
   --surface-tint-color: #d7e1ff;
   --on-primary-color: #ffffff;
@@ -56,7 +59,7 @@
   --on-error-color: black;
   --error-container-color: #ff9387;
   --on-error-container-color: #93000a;
-  --background-color: #f9f9ff;
+  --background-color: #ffffff;
   --on-background-color: #1a1b20;
   --surface-color: #f9f9ff;
   --on-surface-color: #1a1b20;
@@ -69,6 +72,46 @@
   --inverse-surface-color: #2f3036;
   --inverse-on-surface-color: #f0f0f7;
   --inverse-primary-color: #acc7ff;
+
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        
+      
+  --primary-color: #acc7ff;
+  --surface-tint-color: #111318;
+  --on-primary-color: #0f2f60;
+  --primary-container-color: #2a4678;
+  --on-primary-container-color: #d7e2ff;
+  --secondary-color: #bec6dc;
+  --on-secondary-color: #283041;
+  --secondary-container-color: #3f4759;
+  --on-secondary-container-color: #dae2f9;
+  --tertiary-color: #97ccf8;
+  --on-tertiary-color: #00344f;
+  --tertiary-container-color: #004b71;
+  --on-tertiary-container-color: #cbe6ff;
+  --error-color: #ffb4ab;
+  --on-error-color: #690005;
+  --error-container-color: #93000a;
+  --on-error-container-color: #ffdad6;
+  --background-color: #111111;
+  --on-background-color: #dae2f9;
+  --surface-color: #111318;
+  --on-surface-color: #e2e2e9;
+  --surface-variant-color: #1a1b20;
+  --on-surface-variant-color: #c4c6d0;
+  --outline-color: #8e9099;
+  --outline-variant-color: #44474f;
+  --shadow-color: #000000;
+  --scrim-color: #000000;
+  --inverse-surface-color: #e2e2e9;
+  --inverse-on-surface-color: #2f3036;
+  --inverse-primary-color: #435e91;
+
+    }
 }
 
 :root[class~='dark'] {
