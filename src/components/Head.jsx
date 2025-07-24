@@ -27,19 +27,19 @@ export default function Head() {
                 </Link>
                 <span className="flex">
                     <span className="mx-4 sm:block font-medium">
-                        <a className="flex items-center" 
+                        <a className="flex items-center hidden sm:inline" 
                             href={"tel:" + headerInfo.phone} 
                             target="_blank"><FaPhone size={22} 
                             className="mr-2" /> 
                                 <div className="hidden lg:block font-medium">{headerInfo.phone}</div>
                         </a>
                     </span>
-                    <span className="mx-4 sm:block font-medium">
+                    <span className="mx-4 font-medium hidden sm:inline">
                         <a href={"https://t.me/" + headerInfo.telegram} 
                            target="_blank"><FaTelegram size={24} />
                         </a>
                     </span>
-                    <span className="mx-4 sm:block font-medium">
+                    <span className="mx-4 font-medium hidden sm:inline">
                         <a href={"https://vk.com/" + headerInfo.vk} 
                            target="_blank"><FaVk size={24} />
                         </a>

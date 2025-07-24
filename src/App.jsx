@@ -12,6 +12,7 @@ import Event from './components/Event.jsx'
 import About from './components/About.jsx'
 import Appoarch from './components/Appoarch.jsx'
 import HowGet from './components/HowGet.jsx'
+import Formats from './components/Formats.jsx'
 
 function App() {
     return (
@@ -19,7 +20,7 @@ function App() {
             <BrowserRouter>
                 <div className='min-h-[90vh]'>
                     <Routes>
-                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><Event /><PostList /><About /><Appoarch /><Workshops /><HowGet /><Foot /></ErrorBoundary>} />
+                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><Event /><Formats /><PostList /><About /><Appoarch /><Workshops /><HowGet /><Foot /></ErrorBoundary>} />
                             <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
                             <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                             <Route path="/postpage" element={<ErrorBoundary><PostPage /></ErrorBoundary>} />

@@ -8,8 +8,9 @@ export default function Formats() {
     useEffect(() => {
         getSingetonInfo('learn_format').then((r) => {
             getFormatInfo(r)
+            console.log(r)
         })
-    })
+    }, [])
     if (formatInfo.title === undefined)
         return (<></>)
 
