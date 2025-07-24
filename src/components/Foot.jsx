@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { FaVk, FaTelegram } from "react-icons/fa6";
-import { getLayoutInfo } from '../services/api.js';
+import { getSingetonInfo } from '../services/api.js';
 import { useState, useEffect } from 'react';
 import { correctURL } from '../services/img.js'
 
@@ -8,7 +8,7 @@ export default function Foot() {
     const [footerInfo, setFooterInfo] = useState({});
     
     useEffect(() => {
-        getLayoutInfo().then((r) => {
+        getSingetonInfo('layout').then((r) => {
             setFooterInfo(r)
         });
     }, [])

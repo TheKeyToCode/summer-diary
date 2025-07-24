@@ -15,6 +15,14 @@ export async function getLayoutInfo() {
 
 export async function getMainInfo() {
     return getFetch(`api/singletons/get/main_page`, {populate : 2})
+
+export async function getSingetonInfo(name) {
+    return getFetch(`api/singletons/get/${name}?token=7123bc63c91be681bf4a2528e6d800&populate=2`)
+}
+
+export async function getCollectionInfo(name) {
+    return getFetch(`api/collections/get/${name}?token=7123bc63c91be681bf4a2528e6d800&populate=2`)
+
 }
 
 export async function getCollectionByName({ name, limit = 1, skip = 0, filter = {}, populate = 1 }) {
@@ -33,5 +41,3 @@ export async function getPosts(page = 1) {
     const extra = 3 //Количество статей за каждую "страницу"
     return getFetch(`api/collections/get/posts`, {filter: { published: true }, sort: { date: -1 }, limit:extra, skip:(page-1)*extra})
 }
-
-

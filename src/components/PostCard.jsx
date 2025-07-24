@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { correctURL } from "../services/img";
-import { useEffect } from "react";
-
 
 const months = [' ', 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 export default function PostCard(article) {

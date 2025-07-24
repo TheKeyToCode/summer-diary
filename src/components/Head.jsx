@@ -1,5 +1,5 @@
 import { FaTelegram, FaVk, FaPhone } from "react-icons/fa6";
-import { getLayoutInfo } from '../services/api.js';
+import { getSingetonInfo } from '../services/api.js';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { correctURL } from '../services/img.js'
@@ -9,7 +9,7 @@ export default function Head() {
 
     });
     useEffect(() => {
-        getLayoutInfo().then((r) => {
+       getSingetonInfo('layout').then((r) => {
             getHeaderInfo(r)
         });
     }, [])

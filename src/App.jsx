@@ -7,6 +7,11 @@ import PostPage from './components/PostPage.jsx';
 import MainPage from "./components/MainPage.jsx"
 import { ErrorBoundary } from 'react-error-boundary'
 import PostList from './components/PostList.jsx'
+import Workshops from './components/Workshops.jsx'
+import Event from './components/Event.jsx'
+import About from './components/About.jsx'
+import Appoarch from './components/Appoarch.jsx'
+import HowGet from './components/HowGet.jsx'
 
 function App() {
     return (
@@ -14,8 +19,7 @@ function App() {
             <BrowserRouter>
                 <div className='min-h-[90vh]'>
                     <Routes>
-                        
-                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><PostList /><Foot /></ErrorBoundary>} />
+                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><Event /><PostList /><About /><Appoarch /><Workshops /><HowGet /><Foot /></ErrorBoundary>} />
                             <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
                             <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                             <Route path="/postpage" element={<ErrorBoundary><PostPage /></ErrorBoundary>} />
