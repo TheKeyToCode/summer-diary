@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getPostBySlug } from '../services/api.js';
 import ReactMarkdown from 'react-markdown';
 import { useState, useEffect } from 'react';

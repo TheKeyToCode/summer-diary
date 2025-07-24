@@ -1,5 +1,5 @@
 
-import { getCollectionByName, getCardByNameAndSlug, getPosts } from "../services/api";
+import { getPosts } from "../services/api";
 import { useEffect, useState } from 'react'
 import PostCard from "./PostCard";
 
