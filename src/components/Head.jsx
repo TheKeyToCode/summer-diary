@@ -27,7 +27,7 @@ export default function Head() {
                 </Link>
                 <span className="flex">
                     <span className="mx-4 sm:block font-medium">
-                        <a className="flex items-center hidden sm:inline" 
+                        <a className="hidden items-center sm:flex" 
                             href={"tel:" + headerInfo.phone} 
                             target="_blank"><FaPhone size={22} 
                             className="mr-2" /> 

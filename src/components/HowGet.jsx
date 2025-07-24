@@ -21,7 +21,7 @@ export default function HowGet() {
 
         <div className="container flex py-20 px-10 justify-between mx-auto px-5 flex-col xl:flex-row">
             <img src={correctURL(howInfo.image.path)} alt="Человек Программирует" title="Человек Программирует" height={400} width={650} />
-            <div className="text-lg font-extralight max-w-[500px] pt-20 title"><ReactMarkdown children={howInfo.text} /></div>
+            <div className="text-lg font-extralight max-w-[500px] title"><ReactMarkdown children={howInfo.text} /></div>
         </div>
     </>)
 }

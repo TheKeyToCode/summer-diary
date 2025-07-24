@@ -16,8 +16,8 @@ export default function PostCard(article) {
                     }
                 alt="Image" />
                 <div className="text-sm text-blue-600 font-medium pt-6">{article.category}</div>
-                <div className="text-xl font-bold mt-2 mb-2 px-5">{article.title}</div>
-                <p className="text-gray-600 text-sm px-5">{article.description.slice(0, 150)}...</p>
+                <div className="text-xl font-bold mt-2 mb-2 px-5 text-gray-800">{article.title}</div>
+                <p className="text-gray-600 text-sm px-5">{article.description.split(' ').slice(0, 30).join(' ')}...</p>
             </div>
 
 

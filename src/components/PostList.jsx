@@ -8,6 +8,7 @@ export default function PostList() {
     const [posts, setPosts] = useState([]);
     const [showMore, setShowMore] = useState(true);
 
+
     function morePages() {
         setCurrentPage(currentPage + 1)
         getPosts(currentPage + 1).then((r) => {
@@ -16,7 +17,9 @@ export default function PostList() {
             // console.log("r1:", r1)
             r1.push(...r.entries);
             setPosts(r1);
-            if (posts.length !== r1.length)
+            console.log(posts)
+            console.log(posts.total, r1.length)
+            if (posts.total !== r1.length)
                 setShowMore(false);
             else
                 setShowMore(true);

@@ -13,6 +13,11 @@ import About from './components/About.jsx'
 import Appoarch from './components/Appoarch.jsx'
 import HowGet from './components/HowGet.jsx'
 import Formats from './components/Formats.jsx'
+import Masters from './components/Masters.jsx'
+import Timeline from './components/Timeline.jsx'
+import Alexey from './components/Alexey.jsx'
+import Secret from './components/Secret.jsx'
+
 
 function App() {
     return (
@@ -20,11 +25,12 @@ function App() {
             <BrowserRouter>
                 <div className='min-h-[90vh]'>
                     <Routes>
-                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><Event /><Formats /><PostList /><About /><Appoarch /><Workshops /><HowGet /><Foot /></ErrorBoundary>} />
+                            <Route path="/" element={<ErrorBoundary><Head /><MainPage /><PostList /><Event /><Masters /><Formats /><Timeline /><About /><Appoarch /><HowGet /><Foot /></ErrorBoundary>} />
                             <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
                             <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                             <Route path="/postpage" element={<ErrorBoundary><PostPage /></ErrorBoundary>} />
-                        
+                            <Route path="/alexey" element={<ErrorBoundary><Head /><Alexey /><Foot /></ErrorBoundary>} />
+                            <Route path="/shulker" element={<ErrorBoundary><Secret /></ErrorBoundary>} />
                     </Routes>
                 </div>
             </BrowserRouter>

@@ -15,7 +15,7 @@ export default function Appoarch() {
 
     return (
         <>
-            <h2 className="text-center pt-20 font-bold text-black text-2xl md:text-4xl">НАШ ПОДХОД</h2>
+            <h2 className="text-center pt-20 font-bold text-primary text-2xl md:text-4xl">НАШ ПОДХОД</h2>
             <div className="container mx-auto px-5 pt-10">
                 <div className="flex-wrap grid grid-cols-1 lg:grid-cols-2 content-center">
                     {appoarchInfo.entries.map((el) => {

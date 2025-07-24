@@ -1,15 +1,14 @@
-import { getMainInfo } from '../services/api.js'
+import { getSingetonInfo } from '../services/api.js'
 import { useState, useEffect } from 'react'
 import { correctURL } from '../services/img.js'
 
 
-export default function Hero() {
+export default function MainPage() {
     const [mainInfo, setMainInfo] = useState({});
     
     useEffect(() => {
-        getMainInfo().then((r) => {
+        getSingetonInfo('main_page').then((r) => {
             setMainInfo(r)
-            console.log(r)
         });
     }, [])
     if (mainInfo.title === undefined) {
@@ -18,7 +17,7 @@ export default function Hero() {
 
   return (
     <div
-      className="py-16 text-on-background bg-background "
+      className="py-16 text-on-background relative"
     >
       <div className="container mx-auto px-5 flex flex-col md:flex-row items-center justify-between">
         <div className="max-w-xl mb-10 md:mb-0">
@@ -52,7 +51,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center relative">
+        <div className='absolute top-0 right-0 -z-1 w-[900px] max-w-[100vw] pl-10 opacity-20 blur-xs'>
+        <img src="http://api.diary.ssypmarket.ru/storage/uploads/2025/07/24/fon_uid_6881e946cf8ba.png" className='h-auto w-full' alt="" />
+      </div>
           <img
             src={correctURL(mainInfo.hero_image.path)}
             alt="ноутбук с кодом"
