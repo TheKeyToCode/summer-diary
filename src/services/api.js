@@ -15,6 +15,7 @@ export async function getLayoutInfo() {
 
 export async function getMainInfo() {
     return getFetch(`api/singletons/get/main_page`, {populate : 2})
+}
 
 export async function getSingetonInfo(name) {
     return getFetch(`api/singletons/get/${name}?token=7123bc63c91be681bf4a2528e6d800&populate=2`)
