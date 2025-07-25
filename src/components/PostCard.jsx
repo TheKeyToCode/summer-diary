@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { correctURL } from "../services/img";
+import { FaRegComment } from "react-icons/fa";
 
 const months = [' ', 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 export default function PostCard(article) {
@@ -26,6 +27,7 @@ export default function PostCard(article) {
                     <div>👤 {article["author"]}</div>
                     <div>{`${article.date.slice(8, 10)} ${months[Number(article.date.slice(5, 7))]} ${article.date.slice(0, 4)} года`}</div>
                 </div>
+                <Link to={`comment/${article.slug}`} rel="None"><FaRegComment size={35} title="Комментарий" /></Link>
                 <Link to={`post/${article.slug}`} className="px-3 py-2 font-medium text-md cursor-pointer bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary hover:shadow-lg rounded-xl">Читать</Link>
             </div>
         </div>

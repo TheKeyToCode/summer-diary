@@ -15,8 +15,12 @@ import HowGet from './components/HowGet.jsx'
 import Formats from './components/Formats.jsx'
 import Masters from './components/Masters.jsx'
 import Timeline from './components/Timeline.jsx'
+import CommentPage from './components/CommentPage.jsx'
 import Alexey from './components/Alexey.jsx'
+import Registration from './components/Registration.jsx'
 import Secret from './components/Secret.jsx'
+import TestMDPage from './components/TestMDPage2.jsx'
+{/* <TestMDPage /> */}
 
 
 function App() {
@@ -27,10 +31,13 @@ function App() {
                     <Routes>
                             <Route path="/" element={<ErrorBoundary><Head /><MainPage /><PostList /><Event /><Masters /><Formats /><Timeline /><About /><Appoarch /><HowGet /><Foot /></ErrorBoundary>} />
                             <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
+                            <Route path="/comment/:slug" element={ <ErrorBoundary><Head /><CommentPage /><Foot /></ErrorBoundary>} />
                             <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                             <Route path="/postpage" element={<ErrorBoundary><PostPage /></ErrorBoundary>} />
                             <Route path="/alexey" element={<ErrorBoundary><Alexey /><Foot /></ErrorBoundary>} />
                             <Route path="/shulker" element={<ErrorBoundary><Secret /></ErrorBoundary>} />
+                            <Route path="/test" element={<ErrorBoundary><Head /> <TestMDPage/></ErrorBoundary>} />
+                            <Route path="/reg" element={<ErrorBoundary><Head /><Registration /><Foot /></ErrorBoundary>} />
                     </Routes>
                 </div>
             </BrowserRouter>

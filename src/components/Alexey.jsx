@@ -210,7 +210,6 @@ export default function AlexeyWithPreloader() {
         );
       })}
 
-      {/* Пульсирующие золотые точки */}
       {Array.from({ length: 40 }).map((_, i) => (
         <div
           key={`gold-dot-${i}`}
@@ -734,16 +733,4 @@ export default function AlexeyWithPreloader() {
             `}</style>
       {/* {Array.from({ length: 6 }).map((_, i) => (
                 <div
-                    key={flash-${i}}
-                    className="flash-effect"
-                    style={{
-                        top: ${Math.random() * 100}%,
-                        left: ${Math.random() * 100}%,
-                        animationDelay: ${Math.random() * 5}s,
-                    }}
-                />
-            ))} */}
-
-    </div >
-  );
-}
+key={flash-${i}}className="flash-effect"style={{top: ${Math.random() * 100}%,left: ${Math.random() * 100}%,animationDelay: ${Math.random() * 5}s,}}/>))} */}</div >);}

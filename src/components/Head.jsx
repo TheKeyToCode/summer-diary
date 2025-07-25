@@ -26,7 +26,7 @@ export default function Head() {
                     </div>
                 </Link>
                 <span className="flex">
-                    <span className="mx-4 sm:block font-medium">
+                    <span className="mx-4 font-medium">
                         <a className="hidden items-center sm:flex" 
                             href={"tel:" + headerInfo.phone} 
                             target="_blank"><FaPhone size={22} 
@@ -45,9 +45,8 @@ export default function Head() {
                         </a>
                     </span>
                     <span className="ml-4 my-auto">
-                        <a className="font-medium bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary border-[2px] px-4 py-3 rounded-xl cursor-pointer translation delay-150 duration-150 ease-in-out hover:shadow-lg w-30" 
-                           href={headerInfo.button.url} 
-                           target="_blank">{headerInfo.button.lable}</a>
+                        <Link to={'/reg'} className="font-medium bg-primary hover:bg-secondary text-on-primary hover:text-on-secondary border-[2px] px-4 py-3 rounded-xl cursor-pointer translation delay-150 duration-150 ease-in-out hover:shadow-lg w-30" 
+                           target="_blank">{headerInfo.button.lable}</Link>
                     </span>
 
                 </span>

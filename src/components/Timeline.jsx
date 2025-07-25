@@ -9,14 +9,12 @@ export default function Timeline() {
     useEffect(() => {
         getCollectionInfo('timeline').then((r) => {
             setTimeColInfo(r);
-            console.log(r);
         })
     }, [])
 
     useEffect(() => {
         getSingetonInfo('timeline_title').then((r) => {
             setTimeInfo(r);
-            console.log(r);
         })
     }, [])
 
@@ -34,6 +32,7 @@ export default function Timeline() {
                     <div className="flex-col items-center hidden lg:flex">
                         <div className="w-[16px] h-[18px] rounded-2xl bg-gray-300"></div>
                         <div className="w-[1px] h-full bg-gray-300"></div>
+                        <div className="w-[16px] h-[18px] rounded-2xl bg-gray-300"></div>
                     </div>
                     <div className="lg:pl-20 w-full lg:w-6/7">
                         <div className="text-primary text-3xl mb-7 font-bold">{el.title}</div>

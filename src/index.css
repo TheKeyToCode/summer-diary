@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.foogg {
+  text-align: center;
+}
+
 body{
   @apply bg-background text-on-background
 }
@@ -66,7 +70,9 @@ body{
   font-weight: 700;
   text-decoration: underline;
 }
-
+.Secret {
+  @apply bg-[#222222];
+}
 :root {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
