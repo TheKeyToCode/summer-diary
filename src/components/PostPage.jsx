@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { getPostBySlug } from '../services/api.js';
 import ReactMarkdown from 'react-markdown';
 import { useState, useEffect } from 'react';
+import Translator from './Translator.jsx';
 
 export default function Post() {
     const[postInfo, setPostInfo] = useState({})
@@ -22,7 +23,8 @@ export default function Post() {
             return (<div className=' bg-background text-on-background'>
                 <div key={el._id} className='title post px-5 py-10 container mx-auto bg-background text-on-background'>
                     <div className="max-w-[900px] bg-background text-on-background">
-                        <ReactMarkdown children={el.markdown_text} />
+                        {/* <Translator>{el.markdown_text}</Translator> */}
+                        <ReactMarkdown>{el.markdown_text}</ReactMarkdown>
                     </div>
                 </div></div>
             )

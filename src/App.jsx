@@ -29,7 +29,7 @@ function App() {
                             <Route path="/post/:slug" element={ <ErrorBoundary><Head /><PostPage/><Foot /></ErrorBoundary>} />
                             <Route path="*" element={<ErrorBoundary><NotFoundPage /></ErrorBoundary>} />
                             <Route path="/postpage" element={<ErrorBoundary><PostPage /></ErrorBoundary>} />
-                            <Route path="/alexey" element={<ErrorBoundary><Head /><Alexey /><Foot /></ErrorBoundary>} />
+                            <Route path="/alexey" element={<ErrorBoundary><Alexey /><Foot /></ErrorBoundary>} />
                             <Route path="/shulker" element={<ErrorBoundary><Secret /></ErrorBoundary>} />
                     </Routes>
                 </div>

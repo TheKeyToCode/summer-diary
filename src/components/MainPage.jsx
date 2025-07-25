@@ -53,7 +53,7 @@ export default function MainPage() {
 
         <div className="w-full md:w-1/2 flex justify-center relative">
         <div className='absolute top-0 right-0 -z-1 w-[900px] max-w-[100vw] pl-10 opacity-20 blur-xs'>
-        <img src="http://api.diary.ssypmarket.ru/storage/uploads/2025/07/24/fon_uid_6881e946cf8ba.png" className='h-auto w-full' alt="" />
+        <img src="https://api.diary.ssypmarket.ru/storage/uploads/2025/07/24/fon_uid_6881e946cf8ba.png" className='h-auto w-full' alt="" />
       </div>
           <img
             src={correctURL(mainInfo.hero_image.path)}

@@ -1,4 +1,4 @@
-const apiDomain = 'http://api.diary.ssypmarket.ru/';
+const apiDomain = 'https://api.diary.ssypmarket.ru/';
 
 const getFetch = async function(address, filterList=null) {
     const response = (await fetch(apiDomain + address, {
