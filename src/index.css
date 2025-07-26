@@ -8,6 +8,12 @@ body{
   @apply bg-background text-on-background
 }
 
+input[type=range] {
+  accent-color: var(--primary-color);
+  padding: initial;
+  height: 3px;
+}
+
 .post hr {
   color: var(--primary-color);
   margin-bottom: 20px;

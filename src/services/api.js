@@ -39,7 +39,7 @@ export async function getCommentBySlug(slug) {
 }
 
 export async function getPosts(page = 1) {
-    const extra = 12; //Количество статей за каждую "страницу"
+    const extra = 12;
     return getFetch(`api/collections/get/posts?token=2a273b4e92433fbf9abc18c1a49347`, { filter: { published: true }, sort: { date: -1 }, limit: extra, skip: (page - 1) * extra });
 }    
 
