@@ -22,7 +22,6 @@ export default function Registration() {
     }
 
     function submitHandler(event) {
-        event.preventDefault();
         const form = document.getElementById('form_1');
         const data = {};
 
@@ -85,27 +84,27 @@ export default function Registration() {
         <form className='container grid mx-auto px-5 sm:px-10 md:px-20 lg:px-30 xl:px-40 2xl:px-50 items-center lg:justify-center mt-20 mb-10' onSubmit={submitHandler} id='form_1'>
             <div>
                 <div><label htmlFor="e-mail" className="font-bold text-lg md:text-xl">{regInfo.email}</label></div>
-                <div><input id="e-mail" type="email" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" placeholder="example@mail.ru" /></div>
+                <div><input id="e-mail" type="email" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" placeholder="example@mail.ru" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="surname" className="font-bold text-lg md:text-xl">{regInfo.surname}</label></div>
-                <div><input id="surname" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="surname" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="name" className="font-bold text-lg md:text-xl">{regInfo.name}</label></div>
-                <div><input id="name" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="name" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="patronymic" className="font-bold text-lg md:text-xl">{regInfo.patronymic}</label></div>
-                <div><input id="patronymic" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="patronymic" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="birth_date" className="font-bold text-lg md:text-xl">{regInfo.birth_date}</label></div>
-                <div><input id="birth_date" type="date" className="outline w-[220px] px-3 h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="birth_date" type="date" className="outline w-[220px] px-3 h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="age" className="font-bold text-lg md:text-xl">{regInfo.age}</label></div>
-                <div><input id="age" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="age" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
 
             <div className="mt-7">
@@ -124,15 +123,15 @@ export default function Registration() {
             </div>
             <div className="mt-7">
                 <div><label htmlFor="phone" className="font-bold text-lg md:text-xl">{regInfo.phone}</label></div>
-                <div><input id="phone" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" placeholder='7 999 999 99 99' /></div>
+                <div><input id="phone" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required placeholder='7 999 999 99 99' /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="city" className="font-bold text-lg md:text-xl">{regInfo.city}</label></div>
-                <div><input id="city" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="city" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
             <div className="mt-7">
                 <div><label htmlFor="district" className="font-bold text-lg md:text-xl">{regInfo.district}</label></div>
-                <div><input id="district" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="district" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] invalid:outline-red-500 mt-2 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
 
             <div className='font-bold text-lg md:text-xl mt-15'>{regInfo.tecno_title}</div>
@@ -225,7 +224,7 @@ export default function Registration() {
             <div className="mt-8">
                 <div><label htmlFor="school" className="font-bold text-lg md:text-xl">{regInfo.school}</label></div>
                 <div className='font-light text-gray-600 mt-1 mb-3'>{regInfo.school_subtitle}</div>
-                <div><input id="school" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 translation delay-150 duration-200 focus-visible:outline-primary" /></div>
+                <div><input id="school" type="text" className="outline w-full lg:w-[700px] px-3 xl:w-[1100px] 2xl-[1350px] h-[60px] mt-2 invalid:outline-red-500 translation delay-150 duration-200 focus-visible:outline-primary" required /></div>
             </div>
 
             <div className='font-bold text-lg md:text-xl mt-5'>{regInfo.have_it}</div>
@@ -257,7 +256,7 @@ export default function Registration() {
                     return (
                         <div key={el._id}>
                             <div className='flex'>
-                                <div><input id={el._id} type="radio" name='shirt' className='w-[20px] h-[20px] accent-primary' /></div>
+                                <div><input id={el._id} type="radio" name='shirt' className='w-[20px] h-[20px] accent-primary' required /></div>
                                 <div><label htmlFor={el._id} className='ml-3'>{el}</label></div> 
                             </div>
                         </div>
