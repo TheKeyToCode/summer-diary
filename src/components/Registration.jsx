@@ -28,13 +28,8 @@ export default function Registration() {
 
         for (let i = 0; i < form.elements.length; i++) {
             const el = form.elements[i];
-            if (el.type === 'checkbox')
-                data[el.id] = el.value
-            else
-                data[el.id] = el.value
+            data[el.id] = el.value
         }
-
-        console.log(data)
 
         saveRegistration(data);
     }
