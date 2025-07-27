@@ -1,5 +1,7 @@
+import Config from '../config.js'
+
 export function saveComment(author, text, slug) {
-    fetch('http://api.diary.ssypmarket.ru/api/collections/save/comments?token=f8c7e20b63fb597540bafc635e22b2', {
+    fetch(Config.apiUrl+'api/collections/save/comments?token='+Config.saveToken, {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -14,7 +16,7 @@ export function saveComment(author, text, slug) {
 }
 
 export function saveRegistration(date) {
-    fetch('http://api.diary.ssypmarket.ru/api/collections/save/form?token=f8c7e20b63fb597540bafc635e22b2', {
+    fetch(Config.apiUrl+'=api/collections/save/form?token='+Config.saveToken, {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
