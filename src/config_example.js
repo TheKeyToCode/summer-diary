@@ -1,5 +1,6 @@
-export default Config = {
+ const Config = {
     'apiUrl' : '',
-    'readToken' : '',
-    'writeToken' : ''
+    'getToken' : '',
+    'saveToken' : ''
 }
+export default Config;
